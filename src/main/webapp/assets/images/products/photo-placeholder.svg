@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" viewBox="0 0 720 520">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef7ed"/><stop offset="1" stop-color="#d8eadb"/></linearGradient></defs>
+<rect width="720" height="520" rx="28" fill="url(#g)"/><circle cx="360" cy="238" r="86" fill="#fff" opacity=".92"/><path d="M365 310c-8-65 10-115 58-153-58 4-96 34-105 88-24-32-54-47-90-44 18 54 55 81 109 81 2 10 3 20 4 30z" fill="#2f8f57"/><text x="360" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#174d33">GreenBasket Fresh</text><text x="360" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5e7467">Organic product photo</text>
+</svg>

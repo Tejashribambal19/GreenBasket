@@ -1,0 +1,27 @@
+<%@ page import="java.util.Map" %>
+<%
+String ctx=request.getContextPath();
+boolean buyer=session.getAttribute("loggedUser")!=null;
+boolean farmerLogged=session.getAttribute("loggedFarmer")!=null;
+boolean adminLogged=session.getAttribute("admin")!=null;
+Map<?,?> navCart=(Map<?,?>)session.getAttribute("cart");
+int cartCount=navCart==null?0:navCart.size();
+%>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="<%=ctx%>/home.jsp"><span class="brand-mark">G</span><span>GreenBasket</span></a>
+    <nav class="nav-links">
+      <a href="<%=ctx%>/home.jsp">Home</a>
+      <a href="<%=ctx%>/products.jsp">Shop</a>
+      <a href="<%=ctx%>/about.jsp">Our Story</a>
+      <a href="<%=ctx%>/whyorganic.jsp">Why Organic</a>
+      <a href="<%=ctx%>/contact.jsp">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <% if(buyer){ %><a class="btn btn-soft" href="<%=ctx%>/cart.jsp">Cart <%=cartCount>0?"("+cartCount+")":""%></a><a class="btn btn-primary" href="<%=ctx%>/welcomeUser.jsp">My Account</a>
+      <% } else if(farmerLogged){ %><a class="btn btn-primary" href="<%=ctx%>/welcomeFarmer.jsp">Farmer Studio</a>
+      <% } else if(adminLogged){ %><a class="btn btn-primary" href="<%=ctx%>/AdminPanel.jsp">Admin</a>
+      <% } else { %><a class="btn btn-soft" href="<%=ctx%>/UserLogin.jsp">Sign in</a><a class="btn btn-primary" href="<%=ctx%>/UserRegistration.jsp">Join GreenBasket</a><% } %>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,3 @@
+package com.mycompany.greenbasket;
+import java.io.*;import jakarta.servlet.annotation.*;import jakarta.servlet.http.*;
+@WebServlet("/AdminVerificationServlet") public class AdminVerificationServlet extends HttpServlet{protected void doGet(HttpServletRequest r,HttpServletResponse s)throws IOException{if(r.getSession().getAttribute("admin")!=null){try{String st=r.getParameter("status");if("APPROVED".equals(st)||"REJECTED".equals(st))new ProductDAO().setVerification(Integer.parseInt(r.getParameter("farmerId")),st);}catch(Exception ignored){}}s.sendRedirect(r.getContextPath()+"/AdminPanel.jsp");}}
